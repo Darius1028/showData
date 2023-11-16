@@ -4,6 +4,21 @@ const ipware = require("ipware")();
 const fs = require("fs");
 
 
+
+app.get("/", (req, res) => {
+    const file = __dirname + '/ips.txt' ;
+    fs.readFile(file, "utf8", (err, data) => {
+      if (err) {
+        console.error(err);
+        res.status(500).send("Error al leer el archivo");
+      } else {
+        // Envía el contenido del archivo como respuesta
+        res.send(data);
+      }
+    });
+  });
+  
+
 app.get("/imagen/*", (req, res) => {
   const segments = req.url.split('/');
   const nameImg = segments[segments.length - 1];
