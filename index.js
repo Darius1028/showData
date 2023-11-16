@@ -28,7 +28,9 @@ app.get("/api/imagen/*", (req, res) => {
   const pathImg = __dirname + '/' + nameImg;
   res.sendFile(pathImg);
 
-  fs.appendFile("ips.txt", `${clientIP.clientIp}\n`, (err) => {
+  const file = __dirname + '/ips.txt' ;
+
+  fs.appendFile(file, `${clientIP.clientIp}\n`, (err) => {
     if (err) {
       console.error("Error al guardar la dirección IP:", err);
     } else {
