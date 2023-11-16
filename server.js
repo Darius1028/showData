@@ -27,3 +27,6 @@ const port = 3000;
 app.listen(port, () => {
   console.log(`Servidor Express en funcionamiento en el puerto ${port}`);
 });
+
+
+module.exports = app;
