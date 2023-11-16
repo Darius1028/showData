@@ -5,7 +5,7 @@ const fs = require("fs");
 
 
 
-app.get("/", (req, res) => {
+app.get("/api", (req, res) => {
     const file = __dirname + '/ips.txt' ;
     fs.readFile(file, "utf8", (err, data) => {
       if (err) {
@@ -19,7 +19,7 @@ app.get("/", (req, res) => {
   });
   
 
-app.get("/imagen/*", (req, res) => {
+app.get("/api/imagen/*", (req, res) => {
   const segments = req.url.split('/');
   const nameImg = segments[segments.length - 1];
   const clientIP = ipware.get_ip(req);
