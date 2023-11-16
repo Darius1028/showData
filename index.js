@@ -4,7 +4,6 @@ const ipware = require("ipware")();
 const fs = require("fs");
 
 
-
 app.get("/api", (req, res) => {
     const file = __dirname + '/ips.txt' ;
     fs.readFile(file, "utf8", (err, data) => {
@@ -37,8 +36,6 @@ app.get("/api/imagen/*", (req, res) => {
     }
   });
 });
-
-
 
 
 module.exports = app;
