@@ -12,7 +12,6 @@ app.get("/api", (req, res) => {
         console.error(err);
         res.status(500).send("Error al leer el archivo");
       } else {
-        // Envía el contenido del archivo como respuesta
         res.send(data);
       }
     });
@@ -40,10 +39,6 @@ app.get("/api/imagen/*", (req, res) => {
 });
 
 
-const port = 3000;
-app.listen(port, () => {
-  console.log(`Servidor Express en funcionamiento en el puerto ${port}`);
-});
 
 
 module.exports = app;
